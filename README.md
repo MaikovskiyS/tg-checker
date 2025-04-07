@@ -46,7 +46,13 @@ docker-compose up -d
 ```json
 {
   "is_member": true,
-  "message": "Пользователь является участником канала и успешно добавлен в БД",
   "success": true
+}
+```
+**Error Response**:
+```json
+{
+  "message": "error message",
+  "success": false
 }
 ```
