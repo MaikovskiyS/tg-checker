@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package telegram;
+
+option go_package = "github.com/tg-checker/proto/gen;gen";
+
+// Сервис для проверки пользователей в Telegram-каналах
+service TelegramChecker {
+  // Проверяет, находится ли пользователь в указанном канале
+  rpc CheckUserInChannel (CheckUserRequest) returns (CheckUserResponse);
+}
+
+// Запрос на проверку пользователя в канале
+message CheckUserRequest {
+  string bot_token = 1;    // Токен бота Telegram
+  string channel_link = 2; // Ссылка на канал
+  int64 user_id = 3;       // ID пользователя Telegram
+}
+
+// Ответ на проверку пользователя в канале
+message CheckUserResponse {
+  bool is_member = 1;      // Находится ли пользователь в канале
+}

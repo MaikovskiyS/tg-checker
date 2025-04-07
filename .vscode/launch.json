@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Checker",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/cmd/checker/main.go",
+            "envFile": "${workspaceFolder}/cmd/checker/.env"
+        },
+        {
+            "name": "Launch Gateway",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/cmd/gateway/main.go",
+            "envFile": "${workspaceFolder}/cmd/gateway/.env"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch both services",
+            "configurations": ["Launch Checker", "Launch Gateway"]
+        }
+    ]
+}
